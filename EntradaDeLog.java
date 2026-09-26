@@ -114,11 +114,12 @@ public class EntradaDeLog implements Comparable<EntradaDeLog>
      */
     private void definirQuando()
     {
-        quando = Calendar.getInstance();
-        // Ajusta mês e dia de base 1 para base 0.
+        quando = Calendar.getInstance();        
         quando.set(ano,
-                   mes - 1, dia - 1,
-                   hora, minuto);
+                   // Ajusta mês pois na classe Calendar, janeiro é o mês zero, 
+                   // fevereiro é 1, e assim por diante.
+                   mes - 1, 
+                   dia, hora, minuto);
     }
     
 }
